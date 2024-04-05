@@ -25,8 +25,12 @@ kotlin {
         ios.deploymentTarget = "16.0"
         podfile = project.file("../iosApp/Podfile")
         framework {
+//            baseName = "shared"
+//            isStatic = true
             baseName = "shared"
-            isStatic = true
+            /**MOKO MVVM**/
+            export("dev.icerock.moko:mvvm-core:0.16.1")
+            export("dev.icerock.moko:mvvm-flow:0.16.1")
         }
     }
     
@@ -46,6 +50,10 @@ kotlin {
 //            implementation("app.cash.sqldelight:coroutines-extensions:$sqlDelightVersion")
             /**log**/
             implementation(libs.kermit)
+            /**Moko MVVM**/
+            api("dev.icerock.moko:mvvm-core:0.16.1")
+            api("dev.icerock.moko:mvvm-flow:0.16.1")
+            implementation("io.insert-koin:koin-core:3.2.0")
         }
         androidMain.dependencies{
             implementation(libs.ktor.client.android)
@@ -54,6 +62,8 @@ kotlin {
             implementation("io.insert-koin:koin-androidx-compose")
 //            /**DataBase**/
 //            implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
+            /**MOKO MVVM**/
+            implementation("io.insert-koin:koin-android:3.2.0")
 
         }
         iosMain.dependencies{

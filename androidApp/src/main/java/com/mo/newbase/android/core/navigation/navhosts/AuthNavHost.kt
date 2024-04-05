@@ -1,10 +1,13 @@
-package com.mo.newbase.android.core.utils.navigation.navhosts
+package com.mo.newbase.android.core.navigation.navhosts
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.mo.newbase.android.core.utils.navigation.Screen
-import com.mo.newbase.android.core.utils.navigation.fadeTransitionComposable
+import com.mo.newbase.android.core.navigation.Screen
+import com.mo.newbase.android.core.navigation.fadeTransitionComposable
+import com.mo.newbase.android.features.setup.onBoarding.screens.OnBoardingScreen
+import com.mo.newbase.features.onBoarding.presentation.OnBoardingViewModel
+import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun AuthNavHost(startDestination: Screen) {
@@ -17,11 +20,11 @@ fun AuthNavHost(startDestination: Screen) {
         this.fadeTransitionComposable(
             route = Screen.OnBoarding.route
         ) {
-//            val viewModel: OnBoardingViewModel = getViewModel()
-//            OnBoardingScreen(
-//                viewModel = viewModel,
-//                navController = navController
-//            )
+            val viewModel: OnBoardingViewModel = getViewModel()
+            OnBoardingScreen(
+                viewModel = viewModel,
+                navController = navController
+            )
         }
 
 //        this.fadeTransitionComposable(

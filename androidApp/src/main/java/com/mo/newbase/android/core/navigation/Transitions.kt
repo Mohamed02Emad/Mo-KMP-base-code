@@ -1,4 +1,4 @@
-package com.mo.newbase.android.core.utils.navigation
+package com.mo.newbase.android.core.navigation
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedContentTransitionScope

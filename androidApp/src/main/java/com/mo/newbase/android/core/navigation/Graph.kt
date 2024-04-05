@@ -1,4 +1,4 @@
-package com.mo.newbase.android.core.utils.navigation
+package com.mo.newbase.android.core.navigation
 
 sealed class Screen(val route: String) {
     //example of arguments

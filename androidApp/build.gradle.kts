@@ -40,10 +40,18 @@ android {
 
 dependencies {
     implementation(projects.shared)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material3)
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+
     implementation(libs.androidx.activity.compose)
+    implementation (libs.androidx.material.icons.extended)
+
+    /**system ui helper**/
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
+
     debugImplementation(libs.compose.ui.tooling)
     /**Navigation**/
     implementation(libs.androidx.navigation.compose)

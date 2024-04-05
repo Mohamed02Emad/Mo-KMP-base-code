@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Green Revive</string>
+    <string name="on_boarding1">Recycling is the process of converting waste materials into new materials and obiects</string>
+    <string name="on_boarding2">Create Good Recycling Habits</string>
+    <string name="on_boarding3">Reduces the amount of waste sent to landfills and incinerators</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="get_started">Get Started</string>
+    <string name="login">Login</string>
+    <string name="signUp">SignUp</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="empty_string"> </string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="already_have_an_account">Already have an account </string>
+    <string name="donot_have_an_account">Don\'t have an account </string>
+    <string name="send">Send </string>
+    <string name="verification">Verification </string>
+    <string name="verification_message">Enter the code that was sent to your email </string>
+    <string name="resend">Resend</string>
+    <string name="resend_after">Resend after</string>
+    <string name="second">Second</string>
+    <string name="success">Success</string>
+    <string name="short_password">Password is too short</string>
+    <string name="must_contain_at_least_one_uppercase_letter">must contain at least one uppercase letter</string>
+    <string name="must_contain_at_least_one_lowercase_letter">must contain at least one lowercase letter</string>
+    <string name="must_contain_at_least_one_digit">must contain at least one digit</string>
+    <string name="invalid_email_address">Invalid email address</string>
+    <string name="invalid_phone">Invalid phone</string>
+    <string name="empty_field">Empty field</string>
+    <string name="name_is_too_short">Name is too short</string>
+    <string name="pssword_donot_match">Password don\'t match</string>
+    <string name="reset_password_message">Enter new password</string>
+    <string name="reset_password">Reset password</string>
+    <string name="reset">Reset</string>
+    <string name="password_reset_successfully">Password reset successfully</string>
+    <string name="dark_mode">DarkMode</string>
+    <string name="language">Language</string>
+</resources>

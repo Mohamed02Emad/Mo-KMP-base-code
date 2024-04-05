@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Green Revive</string>
+    <string name="on_boarding1">إعادة التدوير هي عملية تحويل مواد النفايات إلى مواد وأشياء جديدة.</string>
+    <string name="on_boarding2">قم بتطوير عادات جيدة في إعادة التدوير</string>
+    <string name="on_boarding3"> يقلل من كمية النفايات المرسلة إلى المكبات ومحرقات النفايات.</string>
+    <string name="skip">تخطي</string>
+    <string name="next">التالي</string>
+    <string name="previous">السابق</string>
+    <string name="get_started">ابدا</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="signUp">إنشاء حساب</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="name">الاسم</string>
+    <string name="empty_string"> </string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="forgot_password">نسيت كلمة المرور ؟</string>
+    <string name="forgot_password_title">نسيت كلمة المرور</string>
+    <string name="already_have_an_account">لدي حساب بالفعل </string>
+    <string name="donot_have_an_account">ليس لدي حساب </string>
+    <string name="send">ارسال </string>
+    <string name="verification">التحقق</string>
+    <string name="verification_message">ادخل الرمز المرسل لبريدك الالكتروني </string>
+    <string name="resend">ارسل مجددا</string>
+    <string name="resend_after">اعد الارسال بعد</string>
+    <string name="second">ثانية</string>
+    <string name="success">ناجح</string>
+    <string name="short_password">كلمة المرور قصيرة</string>
+
+    <string name="must_contain_at_least_one_uppercase_letter">يجب ان يحتوي علي حرف واحد كبير علي الاقل</string>
+    <string name="must_contain_at_least_one_lowercase_letter">يجب ان يحتوي علي حرف واحد صغير علي الاقل</string>
+    <string name="must_contain_at_least_one_digit">يجب ان يحتوي علي رقم واحد علي الاقل</string>
+    <string name="invalid_email_address">بريد الكتروني غير صالح</string>
+    <string name="invalid_phone">الهاتف غير صالح</string>
+    <string name="empty_field">الحقل فارغ</string>
+    <string name="name_is_too_short">الاسم صغير جدا</string>
+    <string name="pssword_donot_match">كلمة المرور مختلفة</string>
+
+    <string name="reset_password_message">ادخل كلمة المرور الجديدة</string>
+    <string name="reset_password">اعادة تعيين كلمة المرور</string>
+    <string name="reset">حفظ</string>
+    <string name="password_reset_successfully">تم تغيير كلمة المرور بنجاح</string>
+
+    <string name="dark_mode">الوضع المظلم</string>
+    <string name="language">اللغة</string>
+</resources>
