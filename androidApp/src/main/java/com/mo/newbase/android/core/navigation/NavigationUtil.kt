@@ -1,6 +1,7 @@
 package com.mo.newbase.android.core.navigation
 
 import androidx.navigation.NavController
+import com.mo.newbase.core.navigation.Screen
 
 fun NavController.navigateWithArgs(
     screen: Screen,

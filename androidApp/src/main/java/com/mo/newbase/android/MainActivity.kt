@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.mo.newbase.android.core.navigation.Screen
+import com.mo.newbase.core.navigation.Screen
 import com.mo.newbase.android.core.navigation.navhosts.AuthNavHost
 import com.mo.newbase.android.theme.MyApplicationTheme
 import kotlinx.coroutines.runBlocking

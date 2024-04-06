@@ -1,6 +1,9 @@
 package com.mo.newbase
 
 import com.mo.newbase.core.base.BaseViewModel
+import com.mo.newbase.core.navigation.Screen
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import org.koin.core.component.KoinComponent
 
 class SharedViewModel : BaseViewModel(), KoinComponent {
@@ -11,14 +14,14 @@ class SharedViewModel : BaseViewModel(), KoinComponent {
 //    private val getOnBoardingFinishedUseCase: GetOnBoardingFinishedUseCase by inject()
 //    private val globalStates: GlobalStates by inject()
 //
-//    private var _startDestination = MutableStateFlow<Pair<String, String>?>(null)
-//    val startDestination: StateFlow<Pair<String, String>?> = _startDestination
+    private var _startDestination = MutableStateFlow<Screen?>(null)
+    val startDestination: StateFlow<Screen?> = _startDestination
 //
 //    private var _logoutState = MutableStateFlow<RequestState<BaseResponse>?>(null)
 //    val logoutState: StateFlow<RequestState<BaseResponse>?> = _logoutState
 //
-//    private var _isGuest = MutableStateFlow(false)
-//    val isGuest: StateFlow<Boolean> = _isGuest
+    private var _isGuest = MutableStateFlow(false)
+    val isGuest: StateFlow<Boolean> = _isGuest
 
 
 //    init {
@@ -31,17 +34,19 @@ class SharedViewModel : BaseViewModel(), KoinComponent {
 //        return isGuest.value
 //    }
 
-//    suspend fun getStartDestination() {
+    suspend fun getStartDestination() {
 //        val isLoggedIn = getUserLoggedInUseCase()
 //        val isOnBoardingFinished = getOnBoardingFinishedUseCase()
-//        if (isOnBoardingFinished.not()) {
-//            _startDestination.value = AuthGraph.AUTH_ON_BOARDING_ROUTE.name to "auth"
-//        } else if (isLoggedIn.not() && isGuest.value.not()) {
-//            _startDestination.value = AuthGraph.AUTH_LOGIN_ROUTE.name to "auth"
-//        } else {
-//            _startDestination.value = MainGraph.MAIN_HOME_SCREEN_ROUTE.name to "home"
-//        }
-//    }
+        val isLoggedIn = false
+        val isOnBoardingFinished = false
+        if (isOnBoardingFinished.not()) {
+            _startDestination.value = Screen.OnBoarding
+        } else if (isLoggedIn.not() && isGuest.value.not()) {
+            _startDestination.value = Screen.Login
+        } else {
+            _startDestination.value = Screen.Home
+        }
+    }
 //
 //    fun logOut() {
 //        viewModelScope.launch {
