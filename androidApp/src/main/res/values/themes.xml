@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.My_Base_compose_code" parent="android:Theme.Material.Light.NoActionBar" >
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+    <style name="Theme.My_Base_compose_code.splash" parent="android:Theme.Material.Light.NoActionBar" >
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowBackground">@drawable/splash_list</item>
+    </style>
+</resources>

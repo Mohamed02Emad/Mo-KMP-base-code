@@ -46,12 +46,14 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-
     implementation(libs.androidx.activity.compose)
     implementation (libs.androidx.material.icons.extended)
 
     /**system ui helper**/
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
+
+    /**Splash Api**/
+    implementation(libs.splash.api)
 
     debugImplementation(libs.compose.ui.tooling)
     /**Navigation**/
@@ -62,7 +64,6 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-compose")
 
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
-
 
     /**Coil**/
     implementation ("io.coil-kt:coil:1.1.1")
