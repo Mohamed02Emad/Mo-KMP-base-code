@@ -34,3 +34,42 @@ If you want to add a native module, you can add it in the `App` (for Android) or
 For preferences handling, I've implemented injection, simply inject "AppPreferences" anywhere in your code and start using it.
 
 To add more keys to preferences, navigate to `commonMain/.../core/local/preferences/AppPreferences` and add the keys in the companion object. Utilize setters and getters to save your data.
+
+### 3- database (SQLite Delight)
+
+At `commonMain/sqldelight`, you can write your queries and schema definitions. It's recommended to read more about `sqldelight` before using it. Additionally, it has been injected as "Database".
+
+### 4- API (Ktor)
+
+The `KtorClient` is provided for making API requests. Inject it in any class and use methods inside (post, delete, get, put, postWithMultipart, putWithMultipart, handleRequestState).
+
+#### Important
+
+- All methods except for "handleRequestState" do not need further explanation.
+- `handleRequestState` takes the response from other methods and returns a `RequestState`. Possible request states are:
+  - "Error" with a message
+  - "Loading"
+  - "Success" with data
+  - "NotAuthorized" with a message.
+
+#### Note
+
+- Ensure that all your responses inherit from "BaseResponse".
+- All your view models should inherit from "BaseViewModel" where you can find a method to handle your request state. Simply pass your request state to it, and it will provide callbacks in many useful situations.
+
+
+### 5- Navigation
+
+#### For Android Only
+
+1. Go to `commonMain/core/navigation/graph`.
+2. Add all your screens there, similar to the already added screens.
+3. Navigate to `android/core/navigation`.
+4. Read the method names in the navigation helper, and you will understand how to navigate.
+
+
+### 6-SharedViewModel
+
+To use the `SharedViewModel` anywhere in the app, inject a class called `SharedStates`. Utilize the method `get()` like this: `sharedStates.get()`. This will provide you with the singleton instance of the `SharedViewModel`.
+
+The `SharedViewModel` includes a method called `getStartDestination`. Currently, it is not in use, but it will be developed further in the future. It's intended to control which graph is active (main graph or auth graph), although currently, there is only one graph.
