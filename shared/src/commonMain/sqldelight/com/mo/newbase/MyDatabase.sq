@@ -1,0 +1,26 @@
+CREATE TABLE mainTable (
+  intExample INTEGER PRIMARY KEY NOT NULL,
+  stringExample TEXT NOT NULL
+);
+
+selectAll:
+SELECT *
+FROM mainTable;
+
+insert:
+INSERT INTO mainTable(intExample, stringExample)
+VALUES (?, ?);
+
+insertFullPlayerObject:
+INSERT INTO mainTable(intExample, stringExample)
+VALUES ?;
+
+getById:
+SELECT *
+FROM mainTable
+WHERE intExample = ?;
+
+
+deleteById:
+DELETE FROM mainTable
+WHERE intExample = ?;

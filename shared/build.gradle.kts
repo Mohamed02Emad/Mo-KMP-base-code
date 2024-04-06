@@ -3,8 +3,10 @@ plugins {
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
     kotlin("plugin.serialization") version "1.9.22"
-
+    id("app.cash.sqldelight") version "2.0.0"
 }
+private val sqlDelightVersion = "2.0.0"
+
 
 kotlin {
     androidTarget {
@@ -46,8 +48,8 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
             /**dataStore**/
             implementation(libs.androidx.datastore.preferences.core)
-//            /**DataBase**/
-//            implementation("app.cash.sqldelight:coroutines-extensions:$sqlDelightVersion")
+            /**DataBase**/
+            implementation("app.cash.sqldelight:coroutines-extensions:$sqlDelightVersion")
             /**log**/
             implementation(libs.kermit)
             /**Moko MVVM**/
@@ -60,16 +62,16 @@ kotlin {
             /**koin**/
             implementation(project.dependencies.platform("io.insert-koin:koin-bom:3.5.1"))
             implementation("io.insert-koin:koin-androidx-compose")
-//            /**DataBase**/
-//            implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
+            /**DataBase**/
+            implementation("app.cash.sqldelight:android-driver:$sqlDelightVersion")
             /**MOKO MVVM**/
             implementation("io.insert-koin:koin-android:3.2.0")
 
         }
         iosMain.dependencies{
             implementation(libs.ktor.client.ios)
-//            /**DataBase**/
-//            implementation("app.cash.sqldelight:native-driver:$sqlDelightVersion")
+            /**DataBase**/
+            implementation("app.cash.sqldelight:native-driver:$sqlDelightVersion")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -90,4 +92,12 @@ android {
 }
 dependencies {
     implementation(libs.androidx.ui.text.android)
+}
+
+sqldelight {
+    databases {
+        create(name = "MyDataBase") {
+            packageName.set("com.mo.newbase")
+        }
+    }
 }

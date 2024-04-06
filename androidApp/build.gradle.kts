@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    kotlin("plugin.serialization") version "1.9.22"
 }
 
 android {
@@ -59,4 +60,16 @@ dependencies {
     implementation(platform("io.insert-koin:koin-bom:3.5.1"))
     implementation("io.insert-koin:koin-compose")
     implementation("io.insert-koin:koin-androidx-compose")
+
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+
+    /**Coil**/
+    implementation ("io.coil-kt:coil:1.1.1")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation ("com.google.accompanist:accompanist-coil:0.7.0")
+
+//    /**firebase fcm**/
+//    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+//    implementation(libs.firebase.messaging.ktx)
 }

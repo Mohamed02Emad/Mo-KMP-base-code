@@ -1,5 +1,7 @@
 package com.mo.newbase.di.platformModule
 
+import com.mo.newbase.core.local.database.Database
+import com.mo.newbase.core.local.database.DatabaseDriverFactory
 import com.mo.newbase.core.local.prefrences.AppPreferences
 import com.mo.newbase.core.local.prefrences.dataStoreFileName
 import com.mo.newbase.core.local.prefrences.getDataStore
@@ -26,4 +28,13 @@ actual val platformModule = module {
     }
 
     single { AppPreferences(get()) }
+
+    single {
+        Database(
+            databaseDriverFactory = get()
+        )
+    }
+    single {
+        DatabaseDriverFactory()
+    }
 }
