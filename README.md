@@ -73,3 +73,10 @@ The `KtorClient` is provided for making API requests. Inject it in any class and
 To use the `SharedViewModel` anywhere in the app, inject a class called `SharedStates`. Utilize the method `get()` like this: `sharedStates.get()`. This will provide you with the singleton instance of the `SharedViewModel`.
 
 The `SharedViewModel` includes a method called `getStartDestination`. Currently, it is not in use, but it will be developed further in the future. It's intended to control which graph is active (main graph or auth graph), although currently, there is only one graph.
+
+### 7- SettingsViewModel
+
+Update (`darkMode` - `language`) states in `SettingsViewModel` which is injected to `MainActivity` to change language or dark mode.
+use `setDarkMode` and `changeLanguage` methods inside `SettingsViewModel` to do that.
+`setDarkMode` takes a boolean whether it is active or not.
+`changeLanguage` takes a `Languages` enum value (system - ar - an) feel free to add your own locals i have prepared Arabic and English only.
