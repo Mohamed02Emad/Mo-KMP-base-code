@@ -19,13 +19,10 @@ import io.ktor.client.statement.HttpResponse
 import io.ktor.http.ContentType
 import io.ktor.http.Headers
 import io.ktor.http.HttpHeaders
-import io.ktor.http.content.PartData
 import io.ktor.http.contentType
 import io.ktor.http.withCharset
 import io.ktor.util.InternalAPI
 import io.ktor.utils.io.charsets.Charsets
-import io.ktor.utils.io.core.buildPacket
-import io.ktor.utils.io.core.writeFully
 import org.koin.core.component.KoinComponent
 
 
@@ -165,27 +162,38 @@ class KtorClient(
     suspend inline fun <reified Response : BaseResponse> handleRequestState(
         response: HttpResponse,
     ): RequestState<Response> {
-        return when (response.status.value) {
-            200 -> RequestState.Success(data = response.body<Response>(), statusCode = 200)
-            403,
-            401,
-            -> {
-                preferences.clear()
-                globalStates.get().getStartDestination()
-                RequestState.NotAuthorized(
+        return try {
+            when (response.status.value) {
+                200 -> RequestState.Success(data = response.body<Response>(), statusCode = 200)
+                403,
+                401,
+                -> {
+                    preferences.clear()
+                    globalStates.get().getStartDestination()
+                    RequestState.NotAuthorized(
+                        message = response.body<Response>().message.toString(),
+                        statusCode = response.status.value,
+                        errors = response.body<Response>().errors
+                    )
+                }
+
+                500 -> RequestState.Error(
+                    message = "Server error",
+                    statusCode = 500,
+                )
+
+                else -> RequestState.Error(
                     message = response.body<Response>().message.toString(),
                     statusCode = response.status.value,
                     errors = response.body<Response>().errors
                 )
             }
-
-            else -> RequestState.Error(
-                message = response.body<Response>().message.toString(),
-                statusCode = response.status.value,
-                errors = response.body<Response>().errors
+        } catch (e: Exception) {
+            RequestState.Error(
+                message = "Server error",
+                statusCode = 500,
             )
         }
     }
-
 
 }

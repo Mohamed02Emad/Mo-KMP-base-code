@@ -2,6 +2,7 @@ package com.mo.newbase.core.utils
 
 import com.mo.newbase.di.baseModule.baseModule
 import com.mo.newbase.di.platformModule.platformModule
+import com.mo.newbase.di.settingsModule.settingsModule
 import com.mo.newbase.di.setupModules.onBoardingModule
 import com.mo.newbase.di.viewModelsModule.viewModelsModule
 import org.koin.core.context.startKoin
@@ -17,6 +18,7 @@ fun initKoin(nativeModule: Module? = null, appDeclaration: KoinAppDeclaration = 
         }
         modulesList.add(baseModule)
         modulesList.add(platformModule)
+        modulesList.add(settingsModule)
         modulesList.add(viewModelsModule)
         modulesList.add(onBoardingModule)
         modules(modulesList)
