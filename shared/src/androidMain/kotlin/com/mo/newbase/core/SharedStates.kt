@@ -5,7 +5,7 @@ import org.koin.core.component.KoinComponent
 
 actual class SharedStates : KoinComponent {
     private var sharedViewModel: SharedViewModel? = null
-    actual fun get(): SharedViewModel {
+    actual fun getSharedViewModel(): SharedViewModel {
         if (sharedViewModel == null) {
             sharedViewModel = SharedViewModel()
         }

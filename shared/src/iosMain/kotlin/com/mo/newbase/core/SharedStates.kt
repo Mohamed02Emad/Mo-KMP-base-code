@@ -7,6 +7,6 @@ import org.koin.core.component.inject
 actual class SharedStates : KoinComponent {
     //todo fix this
     private  val sharedViewModel: SharedViewModel by inject()
-    actual fun get(): SharedViewModel = sharedViewModel
+    actual fun getSharedViewModel(): SharedViewModel = sharedViewModel
 
 }

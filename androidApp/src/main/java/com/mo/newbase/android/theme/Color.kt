@@ -8,6 +8,7 @@ val primaryLight = Color(0xFF39B54A)
 val secondaryDark = Color(0xFFB13E3E)
 val secondaryLight = Color(0xFFDA4444)
 
+//text
 val onPrimaryDark = Color(0xFFDFF5F7)
 val onPrimaryLight = Color(0xFF0E0E0E)
 

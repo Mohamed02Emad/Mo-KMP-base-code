@@ -169,7 +169,7 @@ class KtorClient(
                 401,
                 -> {
                     preferences.clear()
-                    globalStates.get().getStartDestination()
+                    globalStates.getSharedViewModel().getStartDestination()
                     RequestState.NotAuthorized(
                         message = response.body<Response>().message.toString(),
                         statusCode = response.status.value,

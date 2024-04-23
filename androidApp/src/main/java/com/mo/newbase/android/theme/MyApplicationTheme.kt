@@ -22,6 +22,7 @@ private val DarkColorScheme = darkColorScheme(
     primary = primaryDark,
     secondary = secondaryDark,
     background = backgroundDark,
+    //text
     onPrimary = onPrimaryDark,
     surface = rippleColor
 )
@@ -30,6 +31,7 @@ private val LightColorScheme = lightColorScheme(
     primary = primaryLight,
     secondary = secondaryLight,
     background = backgroundLight,
+    //text
     onPrimary = onPrimaryLight,
     surface = rippleColor
 
@@ -54,7 +56,6 @@ fun MyApplicationTheme(
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
-
     val view = LocalView.current
     if (!view.isInEditMode) {
 //        SideEffect {

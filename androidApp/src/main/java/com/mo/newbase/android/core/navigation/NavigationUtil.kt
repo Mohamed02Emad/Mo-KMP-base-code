@@ -3,14 +3,13 @@ package com.mo.newbase.android.core.navigation
 import androidx.navigation.NavController
 import com.mo.newbase.core.navigation.Screen
 
-fun NavController.navigateWithArgs(
+fun NavController.push(
     screen: Screen,
-    args: Map<String, Any?> = emptyMap(),
     popUpTo: String? = null,
     inclusive: Boolean = false
 ) {
     val route = when (screen) {
-        is Screen.Detail -> screen.createRoute(args["id"] as Int)
+//        is Screen.NotificationDetails -> screen.createRoute(screen.id ?: -1)
         else -> screen.route
     }
 
@@ -36,14 +35,9 @@ fun NavController.popToStart() {
 
 fun NavController.pushReplace(
     screen : Screen,
-    args: Map<String, Any?>? = null,
 ){
     this.popBackStack()
-    args?.let {
-        navigateWithArgs(screen, args)
-    }?:run {
-        this.navigate(screen.route)
-    }
+    push(screen)
 }
 
 fun NavController.clearBackStack() {
@@ -51,11 +45,13 @@ fun NavController.clearBackStack() {
 }
 
 /**
-* can work with no arg screens only
-* */
+ * can work with no arg screens only
+ * */
 fun NavController.replaceStartDestination(screen: Screen) {
     val startDestination = this.graph.startDestinationRoute!!
-    this.navigate(screen.route, builder = {
+    this.navigate(
+        screen.route,
+        builder = {
         popUpTo(startDestination) {
             inclusive = true
         }

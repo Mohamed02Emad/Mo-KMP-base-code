@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.MaterialTheme
@@ -19,9 +21,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.mo.newbase.android.R
 import com.mo.newbase.android.core.composables.VSpace
+import com.mo.newbase.android.core.composables.buttons.BackButton
+import com.mo.newbase.android.core.navigation.push
 import com.mo.newbase.android.features.setup.onBoarding.composables.LogoLayout
 import com.mo.newbase.android.features.setup.onBoarding.composables.OnBoardingButtonsLayout
 import com.mo.newbase.android.features.setup.onBoarding.composables.OnBoardingPage
+import com.mo.newbase.core.navigation.Screen
 import com.mo.newbase.features.onBoarding.presentation.OnBoardingViewModel
 
 
@@ -48,6 +53,8 @@ fun OnBoardingScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+            .padding(14.dp)
             .background(MaterialTheme.colorScheme.background)
     ) {
         val pagerState = rememberPagerState { onBoardings.size }

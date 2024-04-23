@@ -24,10 +24,6 @@ class SettingsViewModel : BaseViewModel() {
     private var _language = MutableStateFlow(Languages.system)
     val language: StateFlow<Languages> = _language
 
-    private var _isRtl = MutableStateFlow(false)
-    val isRtl: StateFlow<Boolean> = _isRtl
-
-
     private suspend fun getDarkMode() {
         val darkMode = getDarkModeUseCase()
         _darkMode.value = darkMode
@@ -44,42 +40,17 @@ class SettingsViewModel : BaseViewModel() {
         }
     }
 
-    fun changeLanguage(language: Languages) {
+    fun setLanguage(language: Languages) {
         viewModelScope.launch {
             changeLanguageUseCase(ChangeLanguageBody(language))
             _language.value = language
-//            changeAppLanguage(language)
         }
     }
-
-    //todo : use this method with moko shared resources
-//    private fun changeAppLanguage(language: Languages) {
-//        when (language) {
-//            Languages.ar -> {
-//                StringDesc.localeType = StringDesc.LocaleType.Custom(language.name)
-//                _isRtl.value = true
-//            }
-//            Languages.en -> {
-//                StringDesc.localeType = StringDesc.LocaleType.Custom(language.name)
-//                _isRtl.value = false
-//            }
-//            else -> {
-//                StringDesc.localeType = StringDesc.LocaleType.System
-//                _isRtl.value = myLang == "ar"
-//            }
-//        }
-//    }
 
     suspend fun initData() {
         getDarkMode()
         getLanguage()
-//        initAppLanguage()
     }
 
-//    private suspend fun initAppLanguage() {
-//        val languageString = getLanguageUseCase()
-//        val language = Languages.valueOf(languageString)
-//        changeAppLanguage(language)
-//    }
 
 }
